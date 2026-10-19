@@ -1,0 +1,13 @@
+{
+  "name": "dmz_jail_ui",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "watch": "vite build --watch"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}

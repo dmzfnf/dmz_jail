@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Prison</title>
+</head>
+<body>
+
+<div id="toasts"></div>
+
+<div id="hud" class="hidden">
+  <div class="hud-logo">
+    <img src="/logo.png" alt="">
+  </div>
+  <div class="hud-info">
+    <div><b>Staff :</b> <span id="hud-staff"></span></div>
+    <div><b>Raison :</b> <span id="hud-reason"></span></div>
+  </div>
+  <div id="hud-time" class="hud-time"></div>
+</div>
+
+<div id="progress" class="hidden">
+  <div id="progress-label"></div>
+  <div class="progress-bar"><div id="progress-fill"></div></div>
+</div>
+
+<div id="menu" class="hidden">
+  <header class="menu-head">
+    <div class="menu-logo"><img src="/logo.png" alt=""></div>
+    <div class="menu-title">
+      <h1>Gestion de la prison</h1>
+      <p>Emprisonner un joueur ou libérer un détenu</p>
+    </div>
+    <button id="btn-close" class="icon-btn" aria-label="Fermer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="new">Emprisonner</button>
+    <button class="tab" data-tab="list">Détenus(<span id="count">0</span>)</button>
+  </nav>
+
+  <section id="tab-new" class="panel two-cols">
+    <div class="col">
+      <div class="field">
+        <label class="field-label" for="search">1. Choisir un joueur</label>
+        <input id="search" type="text" placeholder="Rechercher par nom ou ID" autocomplete="off">
+      </div>
+      <ul id="players" class="list"></ul>
+    </div>
+
+    <div class="col">
+      <div class="field">
+        <label class="field-label" for="minutes">2. Durée (minutes)</label>
+        <input id="minutes" type="number" value="10">
+        <div id="time-chips" class="chips"></div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="reason">3. Motif</label>
+        <input id="reason" type="text" maxlength="100" placeholder="Ex : freekill sur le parking">
+        <div id="reason-chips" class="chips"></div>
+      </div>
+
+      <div class="actions">
+        <div id="summary" class="summary">Sélectionnez un joueur pour continuer.</div>
+        <button id="btn-jail" class="primary" disabled>Emprisonner</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="tab-list" class="panel hidden">
+    <ul id="jailed" class="list tall"></ul>
+  </section>
+</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
