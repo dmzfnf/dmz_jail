@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 version '1.0.0-1f84ef3'
-=======
-version '1.0.0'
->>>>>>> 35612b1 (delete all system version commit ect)
 fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
